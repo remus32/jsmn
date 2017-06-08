@@ -19,14 +19,15 @@ jsmntok_t *native_parse(const char *str, uint32_t *count){
         *count *= MEM_MULTI;
     }
     if(r >= 0){
+        *count = (uint32_t)r;
         return tok;
     }else{
         return NULL;
     }
 }
 
-int32_t json_primitive() { return JSMN_PRIMITIVE; }
-int32_t json_object() { return JSMN_OBJECT; }
-int32_t json_array() { return JSMN_ARRAY; }
-int32_t json_string() { return JSMN_STRING; }
-int32_t json_undefined() { return JSMN_UNDEFINED; }
+int32_t json_primitive() { return (int)JSMN_PRIMITIVE; }
+int32_t json_object() { return (int)JSMN_OBJECT; }
+int32_t json_array() { return (int)JSMN_ARRAY; }
+int32_t json_string() { return (int)JSMN_STRING; }
+int32_t json_undefined() { return (int)JSMN_UNDEFINED; }

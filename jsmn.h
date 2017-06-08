@@ -15,7 +15,7 @@ extern "C" {
  * 	o String
  * 	o Other primitive: number, boolean (true/false) or null
  */
-typedef enum : int32_t {
+typedef enum {
 	JSMN_UNDEFINED = 0,
 	JSMN_OBJECT = 1,
 	JSMN_ARRAY = 2,
