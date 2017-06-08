@@ -1,6 +1,7 @@
 #ifndef __JSMN_H_
 #define __JSMN_H_
 
+#include <stdint.h>
 #include <stddef.h>
 
 #ifdef __cplusplus
@@ -14,7 +15,7 @@ extern "C" {
  * 	o String
  * 	o Other primitive: number, boolean (true/false) or null
  */
-typedef enum {
+typedef enum : int32_t {
 	JSMN_UNDEFINED = 0,
 	JSMN_OBJECT = 1,
 	JSMN_ARRAY = 2,
