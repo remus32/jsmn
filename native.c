@@ -6,17 +6,17 @@
 #define MEM_START 32
 #define MEM_MULTI 2
 
-jsmntok_t *native_parse(const char *str){
+jsmntok_t *native_parse(const char *str, uint32_t *count){
     jsmn_parser parser;
     jsmn_init(&parser);
-    uint32_t count = MEM_START;
+    *count = MEM_START;
     int r = JSMN_ERROR_NOMEM;
     jsmntok_t *tok = NULL;
-    while(r = JSMN_ERROR_NOMEM){
+    while(r == JSMN_ERROR_NOMEM){
         if(tok != NULL)free(tok);
-        tok = malloc(sizeof(jsmntok_t) * count);
-        r = jsmn_parse(&parser, str, strlen(str), tok, count);
-        count *= MEM_MULTI;
+        tok = malloc(sizeof(jsmntok_t) * *count);
+        r = jsmn_parse(&parser, str, strlen(str), tok, *count);
+        *count *= MEM_MULTI;
     }
     if(r >= 0){
         return tok;
