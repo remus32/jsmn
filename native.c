@@ -25,7 +25,8 @@ jsmntok_t *native_parse(const char *str, uint32_t *count){
     }
 }
 
-uint32_t json_primitive() { return JSMN_PRIMITIVE; }
-uint32_t json_object() { return JSMN_OBJECT; }
-uint32_t json_array() { return JSMN_ARRAY; }
-uint32_t json_string() { return JSMN_STRING; }
+int32_t json_primitive() { return JSMN_PRIMITIVE; }
+int32_t json_object() { return JSMN_OBJECT; }
+int32_t json_array() { return JSMN_ARRAY; }
+int32_t json_string() { return JSMN_STRING; }
+int32_t json_undefined() { return JSMN_UNDEFINED; }
